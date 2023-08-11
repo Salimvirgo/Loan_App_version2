@@ -1,0 +1,125 @@
+<div id="wrapper">
+  <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(52,53,55);">
+    <div class="container-fluid d-flex flex-column p-0">
+      <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+        <div><img src="/images/icon.png" style="font-size: 16px;height: 43px;width: 47px;"></div>
+        <div class="sidebar-brand-text mx-3"><span style="font-size: 13px;">SIM KREDIT</span></div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <ul class="nav navbar-nav text-light" id="accordionSidebar">
+        <!-- <li class="nav-item"><a class="nav-link active" href="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li> -->
+        <li class="nav-item"></li>
+        <li class="nav-item"><a class="nav-link" href="loan-logs"><i class="fas fa-solid fa-money-bill"></i></i><span>Loan check</span></a></li>
+        <!-- <li class="nav-item"><a class="nav-link" href="bulkCall-logs"><i class="fas fa-solid fa-server"></i><span>BULK check</span></a></li> -->
+        <!-- <li class="nav-item"><a class="nav-link" href="imei-check"><i class="fas fa-grip-lines-vertical"></i><span>IMEI Check</span></a></li> -->
+        <hr class="sidebar-divider my-0">
+
+      </ul>
+      <br>
+      <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+    </div>
+  </nav>
+  <div id="content">
+    <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+
+      <div class="container-fluid">
+        <h5 style="height: 14px;">
+
+        </h5>
+        <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+        <ul class="nav navbar-nav flex-nowrap ml-auto">
+          <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
+            <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
+              <form class="form-inline mr-auto navbar-search w-100">
+                <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                  <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                </div>
+              </form>
+            </div>
+          </li>
+          <div class="d-none d-sm-block topbar-divider"></div>
+          <li class="nav-item ml-md-auto">
+            <a href="/logout" class="nav-link text-white">
+              <i class="fas fa-sign-out-alt fa-lg text-danger"></i>
+            </a>
+          </li>
+
+        </ul>
+        <div></div>
+      </div>
+    </nav>
+    <div class="container-fluid-1">
+      <h3 class="text-dark mb-4">Voice/ Data Loan Check</h3>
+      <div class="card shadow" style="margin-bottom: 50px;">
+        <div class="card-header py-3">
+          <p class="text-primary m-0 font-weight-bold">Voice/ Data Loan check form</p>
+        </div>
+        <div class="card-body">
+          <form id="frmSubmitSingleRequest">
+            <div class="form-row d-flex">
+              <div class="col-2">
+                <div class="form-group"><label for="country code"><strong>Country Code</strong><br></label><input class="form-control" type="text" id="countrycode" name="countrycode" value="232" placeholder="232" readonly=""></div>
+              </div>
+              <div class="col-2">
+                <div class="form-group"><label for="ndc"><strong>NDC</strong><br></label>
+                  <select class="form-control" aria-label="Default select example" name="ndc" id="ndc">
+                    <option value="72">72</option>
+                    <option value="73">73</option>
+                    <option value="74">74</option>
+                    <option value="75">75</option>
+                    <option value="76">76</option>
+                    <option value="78">78</option>
+                    <option value="79">79</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="form-group"><label for="msisdn"><strong>MSISDN #</strong><span> (***msisdn format - 450001)</span> <br></label><input class="form-control" type="text" placeholder="Enter 6 digits MSISDN e.g 450001" id="msisdn" name="msisdn" multiple size="50"></div>
+              </div>
+            </div>
+            <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(217, 159, 108);">Check<i class="fa fa-download" style="margin-left: 12px;"></i></button></div>
+          </form>
+        </div>
+      </div>
+      <div class="card shadow">
+        <div class="card-header py-3">
+          <p class="text-primary m-0 font-weight-bold">Loan Info</p>
+        </div>
+        <div class="card-body">
+
+          <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+            <table class="table my-0" id="loantable">
+              <thead>
+                <tr>
+                  <!-- <th scope="col">ID</th> -->
+                  <th scope="col">Subscription ID</th>
+                  <th scope="col">MSISDN</th>
+                  <th scope="col">Operation Type</th>
+                  <th scope="col">Loan Type</th>
+                  <th scope="col">Operation Date</th>
+                  <th scope="col">Initial Loan Amount</th>
+                  <th scope="col">Initial Loan Charge</th>
+                  <th scope="col">Loan Amount</th>
+                  <th scope="col">Service Fee</th>
+                  <th scope="col">Repay Amount</th>
+                  <th scope="col">Repay Charge</th>
+                  <th scope="col">Unpaid Amount</th>
+                  <th scope="col">Grace Date</th>
+                  <th scope="col">Force Repay Date</th>
+                </tr>
+              </thead>
+              
+              <tfoot>
+                <tr>
+
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

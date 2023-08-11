@@ -1,0 +1,86 @@
+<div id="content-wrapper">
+    <div id="content">
+        
+            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                <div class="container-fluid">
+                    <h5 style="height: 14px;">
+                        <%-typeof pageTitle !='undefined' ? pageTitle : '' %>
+                    </h5>
+                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                    <ul class="nav navbar-nav flex-nowrap ml-auto">
+                        <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto navbar-search w-100">
+                                    <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                        <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <div class="d-none d-sm-block topbar-divider"></div>
+                        <li class="nav-item dropdown no-arrow">
+                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">
+                                <%- typeof adminName !='undefined' ? adminName : "" %>
+                            </span><img class="border rounded-circle img-profile" src="/images/avatars/avatar1.jpeg"></a>
+                                <div
+                                    class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+                                    <!-- <a class="dropdown-item" href="profile.html">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log
+                                    </a>  -->
+                                    <div
+                                        class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/logout">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout
+                                        </a>
+                                    </div>
+            </div>
+            </li>
+            </ul>
+            <div></div>
+            </div>
+            </nav>
+            <div class="container" style="height: 558px;">
+                <div class="card shadow-lg o-hidden border-0 my-5" style="width: 869px;height: 523px;margin: 31px;margin-right: 37px;margin-left: 116px;">
+                    <div class="card-body p-0">
+                        <div class="p-5" style="height: 536px;">
+                            <div class="text-center">
+                                <h4 class="text-dark mb-4">Create a new user</h4>
+                            </div>
+                            <%- include('../partials/messages.ejs')%>
+                            <form action="/admin/create-user" method="post" class="user">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="First Name" name="firstname"></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Last Name" name="lastname"></div>
+                                </div>
+                                <div class="form-group"><input class="form-control form-control-user" type="text" id="usernameInput" placeholder="username" name="username"></div>
+                                <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail-1" aria-describedby="emailHelp" placeholder="Email Address" name="email"></div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleMsisdnInput" placeholder="enter user msisdn" name="msisdn"></div>
+                                    <div class="col-sm-6">
+                                        <select class="form-control" name="userLevel" style="height: 50px;border-radius: 41px;">
+                                            <option selected value="">Choose user level</option>
+                                            <% if (typeof levels !='undefined' ) { %>
+                                                <% levels.forEach(level=> { %>
+                                                    <option value="<%- level.levelId %>">
+                                                        <%- level.levelName %>
+                                                    </option>
+                                                    <% }) %>
+                                                        <% } %>
+                                        </select></div>
+                                        
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput-1" placeholder="Password" name="password"></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput-1" placeholder="Repeat Password" name="password2"></div>
+                                </div><button class="btn btn-primary btn-block text-white btn-user" type="submit" style="background: rgb(255,102,0);font-size: 19px;width: 175px;">Create&nbsp;</button></form>
+                            <div class="text-center"></div>
+                            <div class="text-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

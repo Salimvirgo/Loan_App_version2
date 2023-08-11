@@ -1,0 +1,119 @@
+<div class="d-flex flex-column" id="content-wrapper">
+
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(52,53,55);">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div><img src="/images/icon.png" style="font-size: 16px;height: 43px;width: 47px;"></div>
+                    <div class="sidebar-brand-text mx-3"><span style="font-size: 13px;">CALL LOGS</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <!-- <li class="nav-item"><a class="nav-link active" href="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li> -->
+                    <li class="nav-item"></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="call-logs"><i class="fas fa-phone-square-alt"></i><span>SINGLE check</span></a></li> -->
+                  <li class="nav-item"><a class="nav-link" href="bulkCall-logs"><i class="fas fa-phone-square-alt"></i><span>Call Log check</span></a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="imei-check"><i class="fas fa-grip-lines-vertical"></i><span>IMEI Check</span></a></li> -->
+                    <hr class="sidebar-divider my-0">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="fas fa-plus"></i>Expand for Bulk Data</a>
+                        
+                    </li> -->
+                      <!-- <div class="row">
+                        <div class="col">
+                          <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            -->
+                            <!-- <li class="nav-item"><a class="nav-link" href="bulkImei-check"><i class="fas fa-grip-lines-vertical"></i><span>IMEI Check</span></a></li> -->
+                    
+                          <!-- </div>
+                        </div>
+                        
+                      </div> -->
+                    <!-- <li class="nav-item"><a class="nav-link" href="msisdn"><i class="fas fa-sim-card"></i><span>MSISDN Check</span></a></li> -->
+                </ul>
+                <br>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+    
+    <div id="content">
+        
+        <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+            
+            <div class="container-fluid">
+                <h5 style="height: 14px;">
+                    
+                </h5>
+                <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                <ul class="nav navbar-nav flex-nowrap ml-auto">
+                    <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto navbar-search w-100">
+                                <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                    <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <div class="d-none d-sm-block topbar-divider"></div>
+                    <li class="nav-item ml-md-auto">
+                        <a href="/logout" class="nav-link text-white">
+                            <i class="fas fa-sign-out-alt fa-lg text-danger"></i>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item dropdown no-arrow">
+                        <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">
+                        
+                        </span><img class="border rounded-circle img-profile" src="../public/images/avatars/avatar1.jpeg"></a>
+                            <div
+                                class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="profile.html"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                <div
+                                    class="dropdown-divider"></div><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a></div>
+        </div>
+        <div class="col-md-3">
+            <ul class="navbar-nav">
+
+                
+            </ul>
+        </div>
+                    </li> -->
+        </ul>
+        <div></div>
+        </div>
+        </nav>
+        <div class="container-fluid-2">
+            <h3 class="text-dark mb-4">Bulk Data Call logs Check</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow" style="margin-bottom: 50px;">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 font-weight-bold">Call logs check form</p>
+                            <span>Kindly upload the MSISDN or IMEI number you wish to check for</span>
+                        </div>
+                        <div class="card-body">
+                            <form id='frmSubmitRequest' enctype="multipart/form-data">
+                                <div class="form-group"><label for="msisdn"><strong>MSISDN #</strong><br></label><input class="form-control" accept=".txt" name="bulkmsisdn" id="bulkmsisdn" type="file" />
+                                  <br>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group"><label for="start-date"><strong>Start Date</strong></label><input class="form-control" type="date" name="startDate" id="startDate"></div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group"><label for="end-date"><strong>End Date</strong><br></label><input class="form-control" type="date" name="endDate" id="endDate"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(255,121,0); margin-top: 5px;">Generate logs<i class="fa fa-download" style="margin-left: 12px;"></i></button></div>
+                            </form>
+                            <p id="zippedlogs"></p>
+                            <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(0, 128, 255); margin-top: 5px;" id="manipulator" hidden>Download logs<i class="fa fa-download" style="margin-left: 12px;"></i></button></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    
+

@@ -1,0 +1,37 @@
+<%- include('partials/head') %>
+
+    <% if ((typeof isAdmin !='undefined' ) && isAdmin==1) { %>
+    <div id="page-top">
+
+        
+        <div id="wrapper">
+
+        
+        <%- include('admin/admin-navbar') %>
+            
+
+            
+                <%- body %>
+           
+            
+            <% } else { %>
+            
+                
+                
+        
+                    <div id="wrapper">
+                        
+                                <%- body %>
+                    
+                                     <%}%>
+                    </div> 
+        
+            </div>
+            
+        
+        
+        </div>
+        <%- include('partials/footer') %>
+
+
+                        

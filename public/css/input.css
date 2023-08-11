@@ -1,0 +1,83 @@
+.container{
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.tag-container{
+    border: 2px solid rgb(65, 67, 67);
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 4px;
+    margin-left: -20px;
+}
+
+.tag-container .tag{
+    padding: .5rem 1rem;
+    border: 1px solid rgb(102,199,255);
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    background: white;
+    cursor: default;
+}
+.tag-container .tag:hover{
+    background: rgb(151,217,255);
+}
+
+.tag i{
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.tag-container input{
+    flex: 1;
+    font-size: 12px;
+    padding: 5px;
+    outline: none;
+    border: 0;
+}
+
+.material-icons{
+    padding-bottom: .1rem;
+    padding-left: .5rem;
+}
+
+.material-icons:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.btn{
+    color: rgb(102,199,255);
+    border: 2px solid rgb(102,199,255);
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    text-align: center;
+    display:inline-block;
+}
+
+.btn:hover{
+    color:white;
+    background: rgb(102,199,255);
+    cursor: pointer;
+}
+
+.success{
+    border: 1px solid green;
+    color:green;
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    background: rgb(158,253,158);
+    display: none;
+}
+
+.error{
+    border: 1px solid red;
+    color:red;
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    background: rgb(248,188,188);
+    display: none;
+}

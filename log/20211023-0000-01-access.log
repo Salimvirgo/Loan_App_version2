@@ -1,0 +1,6 @@
+54286f04-6a24-483e-bdb7-7279e94fb632 304 ::1 GET / 64.337 [Fri, 22 Oct 2021 09:55:06 GMT] - [Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36]
+4f48cd78-afa5-4977-a38e-0bc0f2e8f741 302 ::1 POST /login 122.623 [Fri, 22 Oct 2021 09:55:12 GMT] - [Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36]
+36715c4f-0379-4b0f-9e2b-d52bfc1cf18e 200 ::1 GET /call-logs 10.825 [Fri, 22 Oct 2021 09:55:12 GMT] - [Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36]
+304 ::1 GET /call-logs 17.562 [Fri, 22 Oct 2021 10:00:17 GMT] - [Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36]
+304 ::1 GET /call-logs 31.621 [Fri, 22 Oct 2021 13:02:29 GMT] - [Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36]
+200 ::1 GET /imei-check 9.594 [Fri, 22 Oct 2021 13:02:31 GMT] - [Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36]

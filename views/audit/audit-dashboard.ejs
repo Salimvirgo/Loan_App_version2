@@ -1,0 +1,153 @@
+<div id="wrapper">
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(52,53,55);">
+      <div class="container-fluid d-flex flex-column p-0">
+        <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/audit-dashboard">
+          <div><img src="/images/icon.png" style="font-size: 16px;height: 43px;width: 47px;"></div>
+          <div class="sidebar-brand-text mx-3"><span style="font-size: 13px;">SIM KREDIT</span></div>
+        </a>
+        <hr class="sidebar-divider my-0">
+        <ul class="nav navbar-nav text-light" id="accordionSidebar">
+          <!-- <li class="nav-item"><a class="nav-link active" href="dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li> -->
+          <li class="nav-item"></li>
+          <li class="nav-item"><a class="nav-link" href="single-audit-dashboard"><i class="fas fa-solid fa-chart-bar"></i><span>Single Loan History</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="audit-dashboard"><i class="fas fa-solid fa-chart-bar"></i><span>Bulk Loan History</span></a></li>
+      
+          <hr class="sidebar-divider my-0">
+  
+        </ul>
+        <br>
+        <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+      </div>
+    </nav>
+    <div id="content">
+        <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+            <div class="container-fluid">
+                <h5 style="height: 14px;">
+                    <%-typeof pageTitle !='undefined' ? pageTitle : '' %>
+                </h5>
+                <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                <ul class="nav navbar-nav flex-nowrap ml-auto">
+                    <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fas fa-search"></i></a>
+                        <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto navbar-search w-100">
+                                <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                    <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <div class="d-none d-sm-block topbar-divider"></div>
+                    <li class="nav-item dropdown no-arrow">
+                        <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">
+                            <%- typeof auditName !='undefined' ? auditName : "" %>
+                        </span><img class="border rounded-circle img-profile" src="/images/avatars/avatar1.jpeg"></a>
+                            <div
+                                class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+                                <!-- <a class="dropdown-item" href="profile.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log
+                                </a>  -->
+                                <div
+                                    class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/logout">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout
+                                    </a>
+                                </div>
+        </div>
+        </li>
+        </ul>
+        <div></div>
+        </div>
+        </nav>
+        <div class="container-fluid-1" >
+            <%- include ('../partials/messages') %>
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <p class="text-primary m-0 font-weight-bold">Filter by range</p>
+                </div>
+                <div class="card-body">
+                    <form  id="frmRequestAudit">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group"><label for="start-date"><strong>Start Date</strong></label><input class="form-control" type="date" id="startDate" name="startDate"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group"><label for="country"><strong>End Date</strong><br></label><input class="form-control" type="date" id="endDate" name="endDate"></div>
+                                </div> 
+                                
+                            </div>
+                            <div class="col">
+                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" style="background: rgb(252, 126, 42);">Filter</button></div>
+                            </div>
+                        
+                    </form>  
+                </div>
+            </div>
+            <br>
+            <div class="card shadow mt-2" id="auditcard">
+                <div class="card-header py-3">
+                    <p class="text-primary m-0 font-weight-bold">Audit Trail</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <!-- <div class="col-md-6 text-nowrap">
+                            <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm"><option value="10" selected="">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>&nbsp;</label></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                        </div> -->
+                    </div>
+                    <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                        <table class="table my-0" id="loantable">
+                            <thead>
+                              <tr>
+                                <th scope="col">Subscription ID</th>
+                                <th scope="col">MSISDN</th>
+                                <th scope="col">Operation Type</th>
+                                <th scope="col">Loan Type</th>
+                                <th scope="col">Operation Date</th>
+                                <th scope="col">Initial Loan Amount</th>
+                                <th scope="col">Initial Loan Charge</th>
+                                <th scope="col">Loan Amount</th>
+                                <th scope="col">Service Fee</th>
+                                <th scope="col">Repay Amount</th>
+                                <th scope="col">Repay Charge</th>
+                                <th scope="col">Unpaid Amount</th>
+                                <th scope="col">Grace Date</th>
+                                <th scope="col">Force Repay Date</th>
+                              </tr>
+                            </thead>
+                            
+                            <tfoot>
+                              <tr>
+              
+                              </tr>
+                            </tfoot>
+                          </table>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <div id="spinner" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+              <div class="modal-content">
+               
+          
+                <!-- Modal body -->
+                
+                  <div style="display: flex; align-items: center; justify-content: center;" >
+                    <img src="/images/Spinner.svg" alt="">
+                    <h4>Loading !!! Please wait </h4>
+                </div>
+                
+          
+              </div>
+            </div>
+        </div>
+  
+    </div>
+  </div>
